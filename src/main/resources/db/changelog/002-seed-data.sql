@@ -1,1 +1,2 @@
-insert into health_potions (id, name, cost, stock, rarity, hp_recover) values (nextval('hibernate_sequence'), 'Potion of Healing', 20.00, 10, 'common', 10);
+insert into health_potions (id, name, cost, stock, rarity, hp_recovery) values (nextval('hibernate_sequence'), 'Potion of Healing', 20.00, 10, 'common', 10);
+insert into special_effects (id, name, cost, stock, rarity, description, duration) values (nextval('hibernate_sequence'), 'Oil of Etherealness', 50.00, 23, 'rare', 'provides a target with the effects of the Etherealness spell for one hour', 1);

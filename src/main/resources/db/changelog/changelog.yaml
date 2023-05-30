@@ -1,6 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: 1
+      author: you
       dbms: h2
       labels: create-tables
       changes:
@@ -9,9 +10,10 @@ databaseChangeLog:
             relativeToChangelogFile: true
   - changeSet:
       id: 2
-        dbms: h2
-          labels: seed-data
-          changes:
-            - sqlFile:
-                path: 002-seed-data.sql
-                relativeToChangelogFile: true
+      author: you
+      dbms: h2
+      labels: seed-data
+      changes:
+        - sqlFile:
+            path: 002-seed-data.sql
+            relativeToChangelogFile: true
