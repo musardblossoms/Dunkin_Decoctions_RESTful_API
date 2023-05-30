@@ -1,0 +1,26 @@
+spring:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    enabled: true
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: actuator, info, health, metrics
+    endpoint:
+      health:
+        show-details: always
+    health:
+      diskspace:
+        enabled: false
+  info:
+    storeName: Dunkin Decoctions
+  logging:
+    level:
+      root: INFO
