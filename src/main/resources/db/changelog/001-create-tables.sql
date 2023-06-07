@@ -20,3 +20,14 @@ create table special_effects (
     duration int,
     primary key (id)
 );
+
+
+create table one_time_use (
+    id int not null,
+    name varchar(255),
+    cost int,
+    stock int not null,
+    rarity varchar (20),
+    description varchar (255),
+    primary key (id)
+)
