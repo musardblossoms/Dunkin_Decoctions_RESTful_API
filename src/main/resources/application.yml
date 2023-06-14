@@ -1,0 +1,30 @@
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:test
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/changelog.yaml
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: actuator, info, health, metrics
+    endpoint:
+      health:
+        show-details: always
+    health:
+      diskspace:
+        enabled: false
+  info:
+    storeName: Dunkin Decoctions
+  logging:
+    level:
+      root: INFO
