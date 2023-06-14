@@ -21,7 +21,6 @@ create table special_effects (
     primary key (id)
 );
 
-
 create table one_time_use (
     id int not null,
     name varchar(255),
@@ -30,4 +29,4 @@ create table one_time_use (
     rarity varchar (20),
     description varchar (255),
     primary key (id)
-)
+);
