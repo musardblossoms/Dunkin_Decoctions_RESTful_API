@@ -5,7 +5,7 @@ import com.magic.potions.entity.HealthEntity;
 import java.util.List;
 
 public interface HealthService {
-    HealthEntity create (HealthEntity healthPotion);
+    HealthEntity saveHealthPotion (HealthEntity healthPotion);
 
     HealthEntity getHealthPotion (Long id);
 

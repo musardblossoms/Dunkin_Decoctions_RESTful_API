@@ -19,15 +19,21 @@ public class HealthImplementation implements HealthService {
     @Autowired
     public void HealthService (HealthRepository healthRepository) {this.healthRepository = healthRepository; }
 
+    private HealthEntity healthPotion;
+
+    private void createOrder(){
+
+    }
+
     @Override
-    public HealthEntity create(HealthEntity healthPotion){
-        log.info("Health order: ", healthPotion);
+    public HealthEntity saveHealthPotion(HealthEntity healthPotion){
+        log.info("Health order: " + healthPotion);
         return healthRepository.save(healthPotion);
     }
 
     @Override
     public HealthEntity getHealthPotion(Long id) {
-        log.info("Looking for the potion with id ", id);
+        log.info("Looking for the potion with id " + id);
         Optional<HealthEntity> healthEntityOptional = healthRepository.findById(id);
 
 //        add throw exception
@@ -49,4 +55,17 @@ public class HealthImplementation implements HealthService {
         healthRepository.delete(HealthPotionToDelete);
     }
 
+    /* build a health potion */
+    private HealthEntity createHealthPotion(String name, int cost, int stock, String rarity, int hp_recovery){
+        healthPotion = HealthEntity.builder()
+                .name(name)
+                .cost(cost)
+                .stock(stock)
+                .rarity(rarity)
+                .hp_recovery(hp_recovery)
+                .build();
+
+        return healthPotion;
+
+    }
 }

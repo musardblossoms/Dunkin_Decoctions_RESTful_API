@@ -2,15 +2,17 @@ package com.magic.potions.entity;
 
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 @Entity
 @Table(name = "health_potions")
 public class HealthEntity {
 
 @Id
-@GeneratedValue
+@GeneratedValue(strategy = GenerationType.IDENTITY)
 @Column(name = "id")
     private Long id;
 
@@ -28,4 +30,6 @@ public class HealthEntity {
 
 @Column
     private int hp_recovery;
+
+
 }
