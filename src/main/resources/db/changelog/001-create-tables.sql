@@ -1,7 +1,7 @@
 create sequence hibernate_sequence start with 1 increment by 1;
 
 create table health_potions (
-    id int not null,
+    id INTEGER not null UNIQUE,
     name varchar(40),
     cost int,
     stock int not null,
@@ -11,7 +11,7 @@ create table health_potions (
 );
 
 create table special_effects (
-    id int not null,
+    id bigint not null,
     name varchar (255),
     cost int,
     stock int not null,
@@ -22,7 +22,7 @@ create table special_effects (
 );
 
 create table one_time_use (
-    id int not null,
+    id bigint not null,
     name varchar(255),
     cost int,
     stock int not null,

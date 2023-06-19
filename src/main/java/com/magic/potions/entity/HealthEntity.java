@@ -7,18 +7,19 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
-@Builder
-@Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@Entity
 @Table(name = "health_potions")
-public class HealthEntity {
+public class HealthEntity implements Serializable {
 
 
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 @Column(name = "id")
+
     private Long id;
 
 @Column

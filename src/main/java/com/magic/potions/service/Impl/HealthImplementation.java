@@ -21,14 +21,10 @@ public class HealthImplementation implements HealthService {
 
     private HealthEntity healthPotion;
 
-    private void createOrder(){
-
-    }
-
     @Override
-    public HealthEntity saveHealthPotion(HealthEntity healthPotion){
-        log.info("Health order: " + healthPotion);
-        return healthRepository.save(healthPotion);
+    public HealthEntity saveHealthPotion(HealthEntity healthEntity){
+
+        return healthRepository.save(healthEntity);
     }
 
     @Override
@@ -57,13 +53,11 @@ public class HealthImplementation implements HealthService {
 
     /* build a health potion */
     private HealthEntity createHealthPotion(String name, int cost, int stock, String rarity, int hp_recovery){
-        healthPotion = HealthEntity.builder()
-                .name(name)
-                .cost(cost)
-                .stock(stock)
-                .rarity(rarity)
-                .hp_recovery(hp_recovery)
-                .build();
+        healthPotion.setName(name);
+        healthPotion.setCost(cost);
+        healthPotion.setStock(stock);
+        healthPotion.setRarity(rarity);
+        healthPotion.setHp_recovery(hp_recovery);
 
         return healthPotion;
 
