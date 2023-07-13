@@ -1,12 +1,8 @@
 package com.magic.potions.repositories;
 
 import com.magic.potions.entity.HealthEntity;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
+public interface HealthRepository extends JpaRepository<HealthEntity, Long> {
 
-public interface HealthRepository extends CrudRepository<HealthEntity, Long> {
-
-    List<HealthEntity> findAll();
-//    06/13: may have to make a save method?
 }

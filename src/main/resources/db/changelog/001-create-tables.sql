@@ -1,4 +1,4 @@
-create sequence hibernate_sequence start with 1 increment by 1;
+create sequence public.hibernate_sequence start with 1 increment by 1;
 
 create table health_potions (
     id INTEGER not null UNIQUE,

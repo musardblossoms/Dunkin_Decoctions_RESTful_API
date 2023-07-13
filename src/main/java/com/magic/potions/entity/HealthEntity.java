@@ -18,8 +18,7 @@ public class HealthEntity implements Serializable {
 
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-@Column(name = "id")
-
+@Column
     private Long id;
 
 @Column

@@ -1,25 +1,29 @@
 package com.magic.potions.controllers;
 
 import com.magic.potions.entity.HealthEntity;
-import com.magic.potions.service.HealthService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.magic.potions.repositories.HealthRepository;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
 public class HealthController {
-    @Autowired
-    private HealthService healthService;
+    private final HealthRepository healthRepository;
 
     private HealthEntity healthPotion;
 
+    public HealthController(HealthRepository healthRepository) {
+        this.healthRepository = healthRepository;
+    }
+
+
     /* return potion by id */
     @GetMapping(value = "/health/{id}")
-    private ResponseEntity<HealthEntity> getHealthPotion(@PathVariable("id") final Long id){
-        HealthEntity response = healthService.getHealthPotion(id);
+    private ResponseEntity<Optional<HealthEntity>> getHealthPotion(@PathVariable("id") final Long id){
+        Optional<HealthEntity> response = healthRepository.findById(id);
 
         if(response == null){
             return ResponseEntity.notFound().build();
@@ -34,7 +38,8 @@ public class HealthController {
     @PostMapping(value = "/health/create")
     public ResponseEntity<?> createHealthPotion(@RequestBody HealthEntity healthPotion){
         System.out.println("Health potion: " + healthPotion);
-        healthService.saveHealthPotion(healthPotion);
+
+        healthRepository.save(healthPotion);
 
         return ResponseEntity.ok(HttpStatus.CREATED);
     }
