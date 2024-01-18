@@ -1,6 +1,6 @@
 package com.magic.potions.service;
 
-import com.magic.potions.entity.HealthEntity;
+import com.magic.potions.controllers.entity.HealthEntity;
 
 import java.util.List;
 
