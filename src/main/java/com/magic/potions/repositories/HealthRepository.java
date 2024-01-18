@@ -1,6 +1,6 @@
 package com.magic.potions.repositories;
 
-import com.magic.potions.entity.HealthEntity;
+import com.magic.potions.controllers.entity.HealthEntity;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

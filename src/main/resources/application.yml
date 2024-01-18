@@ -4,27 +4,36 @@ spring:
       enabled: true
   datasource:
     url: jdbc:h2:mem:test
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
 
   jpa:
-    hibernate:
-      ddl-auto: validate
+    spring:
+      defer-datasource-initialization:
+        true
+      jpa:
+        database-platform:
+          org.hibernate.dialect.H2Dialect
+#    hibernate:
+#      ddl-auto: validate
   liquibase:
     enabled: true
     change-log: classpath:db/changelog/changelog.yaml
-
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: actuator, info, health, metrics
-    endpoint:
-      health:
-        show-details: always
-    health:
-      diskspace:
-        enabled: false
-  info:
-    storeName: Dunkin Decoctions
-  logging:
-    level:
-      root: INFO
+#
+#  management:
+#    endpoints:
+#      web:
+#        exposure:
+#          include: actuator, info, health, metrics
+#    endpoint:
+#      health:
+#        show-details: always
+#    health:
+#      diskspace:
+#        enabled: false
+#  info:
+#    storeName: Dunkin Decoctions
+#  logging:
+#    level:
+#      root: INFO

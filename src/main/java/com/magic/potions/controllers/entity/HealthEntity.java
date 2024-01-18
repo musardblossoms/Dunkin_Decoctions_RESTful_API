@@ -1,4 +1,4 @@
-package com.magic.potions.entity;
+package com.magic.potions.controllers.entity;
 
 
 import jakarta.persistence.*;

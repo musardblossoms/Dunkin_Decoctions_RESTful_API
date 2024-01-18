@@ -1,6 +1,6 @@
 package com.magic.potions.service.Impl;
 
-import com.magic.potions.entity.HealthEntity;
+import com.magic.potions.controllers.entity.HealthEntity;
 import com.magic.potions.repositories.HealthRepository;
 import com.magic.potions.service.HealthService;
 import lombok.extern.slf4j.Slf4j;
