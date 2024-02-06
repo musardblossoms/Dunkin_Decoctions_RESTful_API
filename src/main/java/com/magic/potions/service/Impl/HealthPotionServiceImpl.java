@@ -19,4 +19,14 @@ public class HealthPotionServiceImpl implements HealthPotionService {
     public List<HealthEntity> findByName(String name) {
         return healthPotionRepository.findByName(name);
     }
+
+    @Override
+    public List<HealthEntity> findAll() {
+        return healthPotionRepository.findAll();
+    }
+
+    @Override
+    public List<HealthEntity> findByRarity(String rarity) {
+        return healthPotionRepository.findByRarity(rarity);
+    }
 }

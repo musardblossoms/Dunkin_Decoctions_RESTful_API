@@ -27,4 +27,16 @@ public class HealthPotionController {
        List<HealthEntity> potions = healthPotionService.findByName(name);
        return ResponseEntity.ok(potions);
     }
+
+    @GetMapping("/all_potions")
+    public ResponseEntity<List<HealthEntity>> findAllPotions(){
+        List<HealthEntity> potions = healthPotionService.findAll();
+        return ResponseEntity.ok(potions);
+    }
+
+    @GetMapping("/rarity/{rarity}")
+    public ResponseEntity<List<HealthEntity>> findPotionByRarity(@PathVariable String rarity) {
+        List<HealthEntity> potions = healthPotionService.findByRarity(rarity);
+        return ResponseEntity.ok(potions);
+    }
 }

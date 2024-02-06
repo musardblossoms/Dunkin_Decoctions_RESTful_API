@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface HealthPotionService {
     List<HealthEntity> findByName(String name);
+
+    List<HealthEntity> findAll();
+
+    List<HealthEntity> findByRarity(String rarity);
 }

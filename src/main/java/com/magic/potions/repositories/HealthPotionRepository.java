@@ -8,5 +8,9 @@ public interface HealthPotionRepository extends JpaRepository<HealthEntity, Long
 
     List<HealthEntity> findByName(String name);
 
+    List<HealthEntity> findAll();
+
+    List<HealthEntity> findByRarity(String rarity);
+
 
 }
